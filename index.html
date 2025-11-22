@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسرار الثراء الكوني</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .book-cover {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            aspect-ratio: 2/3;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            border-radius: 15px;
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.8),
+                inset 0 0 100px rgba(139, 69, 255, 0.1),
+                0 0 50px rgba(139, 69, 255, 0.3);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotateY(-2deg); }
+            50% { transform: translateY(-20px) rotateY(2deg); }
+        }
+
+        .cosmic-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(139, 69, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.2) 0%, transparent 70%);
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, rgba(255, 215, 0, 0.8), transparent),
+                radial-gradient(1px 1px at 33% 80%, white, transparent),
+                radial-gradient(2px 2px at 15% 90%, white, transparent);
+            background-size: 200% 200%;
+            animation: twinkle 4s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .mystical-symbol {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .symbol-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        .symbol-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        .symbol-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 215, 0, 0.5);
+            transform-origin: center;
+        }
+
+        .line:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg); }
+        .line:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg); }
+        .line:nth-child(3) { transform: translate(-50%, -50%) rotate(120deg); }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            padding: 60px 40px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .title-section {
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            color: #fff;
+            text-shadow:
+                0 0 20px rgba(255, 215, 0, 0.8),
+                0 0 40px rgba(139, 69, 255, 0.6),
+                2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow:
+                    0 0 20px rgba(255, 215, 0, 0.8),
+                    0 0 40px rgba(139, 69, 255, 0.6),
+                    2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+            50% {
+                text-shadow:
+                    0 0 30px rgba(255, 215, 0, 1),
+                    0 0 60px rgba(139, 69, 255, 0.8),
+                    2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 3vw, 24px);
+            color: rgba(255, 215, 0, 0.9);
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .decorative-line {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.8), transparent);
+            margin: 30px auto;
+            position: relative;
+        }
+
+        .decorative-line::before,
+        .decorative-line::after {
+            content: '◆';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 215, 0, 0.8);
+            font-size: 12px;
+        }
+
+        .decorative-line::before {
+            right: 100%;
+            margin-right: 10px;
+        }
+
+        .decorative-line::after {
+            left: 100%;
+            margin-left: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: clamp(14px, 2vw, 18px);
+            line-height: 1.8;
+            font-weight: 300;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .bottom-section {
+            text-align: center;
+        }
+
+        .author {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .mystical-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 69, 255, 0.3) 0%, transparent 70%);
+            filter: blur(40px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .glow-1 {
+            top: -150px;
+            left: -150px;
+        }
+
+        .glow-2 {
+            bottom: -150px;
+            right: -150px;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .spine {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="book-cover">
+            <div class="spine"></div>
+            <div class="mystical-glow glow-1"></div>
+            <div class="mystical-glow glow-2"></div>
+            <div class="cosmic-background"></div>
+            <div class="stars"></div>
+
+            <div class="mystical-symbol">
+                <div class="symbol-circle"></div>
+                <div class="symbol-inner"></div>
+                <div class="symbol-lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="title-section">
+                    <div class="subtitle">⋆｡‧˚ʚ♡ɞ˚‧｡⋆</div>
+                    <h1 class="main-title">أسرار الثراء الكوني</h1>
+                    <div class="decorative-line"></div>
+                    <p class="description">
+                        حكمة الأكوان المخفية<br>
+                        في تجلّيات الوفرة والغموض
+                    </p>
+                </div>
+
+                <div class="bottom-section">
+                    <div class="decorative-line"></div>
+                    <p class="author">من أعماق المجهول</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add random shooting stars
+        function createShootingStar() {
+            const star = document.createElement('div');
+            star.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: white;
+                border-radius: 50%;
+                box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
+                top: ${Math.random() * 50}%;
+                left: ${Math.random() * 100}%;
+                animation: shoot 2s linear;
+            `;
+
+            document.querySelector('.book-cover').appendChild(star);
+
+            setTimeout(() => star.remove(), 2000);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shoot {
+                to {
+                    transform: translate(200px, 200px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        setInterval(createShootingStar, 3000);
+    </script>
+</body>
+</html>
